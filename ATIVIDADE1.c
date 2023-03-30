@@ -24,8 +24,8 @@ int main(){
 
     double fim = omp_get_wtime();
     printf("%.5f\n",pi);
-    double t_serial = fim-inicio;
-    printf("Execucao sequencial(s): %f\n",t_serial);
+    double seq = fim-inicio;
+    printf("Execucao sequencial(s): %f\n",seq);
     
 //P
     x = 0; pi = 0; sum = 0;
@@ -43,12 +43,11 @@ int main(){
 
     double fim = omp_get_wtime();
     printf("%.5f\n",pi);
-    double t_paralelo = fim-inicio;
-    double speedup = t_serial/t_paralelo;
+    double time = fim-inicio;
     printf("Pi: %f\n",pi);
-    printf("Execucao paralela(s): %f\n",t_paralelo);
+    printf("Execucao paralela(s): %f\n",time);
     printf("Speedup: %.4f\n", speedup);
-	printf("Eficiencia: %.4f\n",speedup/4.0);
+    printf("Eficiencia: %.4f\n",speedup/4.0);
 
     return 0;
 
