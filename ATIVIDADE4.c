@@ -29,9 +29,7 @@ int main() {
           }
         }
      }
-    
-    #pragma omp critical
-    soma = soma+temp;
+   
     double fim = omp_get_wtime();
         
         
